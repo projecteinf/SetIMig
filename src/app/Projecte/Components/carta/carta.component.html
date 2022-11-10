@@ -1,1 +1,6 @@
-<p>{{carta.num}}-<img src="../../../../assets/Imatges/{{carta.img}}" /></p>
+<span *ngIf="carta.visible" (click)="girar(carta)">
+    {{carta.num}}-<img src="../../../../assets/Imatges/{{carta.img}}" />
+</span>
+<span *ngIf="!carta.visible" (click)="girar(carta)">
+    <img src="../../../../assets/Imatges/revers.png" />
+</span>

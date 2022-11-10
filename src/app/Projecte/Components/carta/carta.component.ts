@@ -12,6 +12,11 @@ export class CartaComponent implements OnInit {
   @Input() carta!: CartaSetIMig;
   
   ngOnInit(): void {
+
+  }
+
+  girar(carta:CartaSetIMig) {
+    carta.girar();
   }
 
 }

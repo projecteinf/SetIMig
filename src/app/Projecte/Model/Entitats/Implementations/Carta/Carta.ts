@@ -13,7 +13,9 @@ export class Carta implements ICarta{
         this.visible = false;
     }
     
-
+    girar() {
+        this.visible = !this.visible;
+    }
 
     
 }
