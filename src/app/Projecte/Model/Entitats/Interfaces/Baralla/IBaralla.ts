@@ -1,4 +1,4 @@
-interface IBaralla {
+export interface IBaralla {
     baralla: Array<ICarta>;
     barrejar(): void;
 }

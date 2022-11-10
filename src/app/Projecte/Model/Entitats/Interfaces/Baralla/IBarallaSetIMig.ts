@@ -1,7 +1,8 @@
-import { Baralla } from "../../Implementations/Baralla/Baralla";
-import { CartaSetIMig } from "../../Implementations/Carta/CartaSetIMig";
 
-export interface IBarallaSetIMig extends Baralla {
+import { CartaSetIMig } from "../../Implementations/Carta/CartaSetIMig";
+import { IBaralla } from "./IBaralla";
+
+export interface IBarallaSetIMig extends IBaralla {
     baralla:Array<CartaSetIMig>;
     generar():void;
 }
