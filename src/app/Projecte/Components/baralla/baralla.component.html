@@ -1,3 +1,14 @@
 <p>baralla works!</p>
+<!--
 <p>{{ baralla.baralla[0].num }} - {{ baralla.baralla[0].pal }}</p>
+<p>{{ baralla.baralla[0].value }}</p>
 <img src="../../../../assets/Imatges/{{baralla.baralla[0].img}}" />
+-->
+
+<table>
+    <tr *ngFor="let carta of baralla.baralla">
+        <td>
+            <app-carta [carta]="carta"></app-carta>
+        </td>
+    </tr>
+</table>
