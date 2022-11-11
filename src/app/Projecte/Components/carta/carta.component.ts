@@ -15,8 +15,9 @@ export class CartaComponent implements OnInit {
 
   }
 
-  girar(carta:CartaSetIMig) {
+  agafar(carta:CartaSetIMig) {
     carta.girar();
+    
   }
 
 }

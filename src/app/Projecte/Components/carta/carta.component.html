@@ -1,6 +1,6 @@
-<span *ngIf="carta.visible" (click)="girar(carta)">
+<span *ngIf="carta.visible" (click)="agafar(carta)">
     {{carta.num}}-<img src="../../../../assets/Imatges/{{carta.img}}" />
 </span>
-<span *ngIf="!carta.visible" (click)="girar(carta)">
+<span *ngIf="!carta.visible" (click)="agafar(carta)">
     <img src="../../../../assets/Imatges/revers.png" />
 </span>
