@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Baralla } from '../../Model/Entitats/Implementations/Baralla/Baralla';
+import { BarallaService } from '../../Model/Services/baralla/baralla.service';
 
 
 @Component({
@@ -9,14 +10,16 @@ import { Baralla } from '../../Model/Entitats/Implementations/Baralla/Baralla';
 })
 
 export class BarallaComponent implements OnInit {
-  baralla!:Baralla;
 
-  constructor() { }
+
+  constructor(private barallaService:BarallaService) { }
 
   ngOnInit(): void {
-    this.baralla = new Baralla();
-    this.baralla.generar();
-    console.log(this.baralla.baralla[0].num);
+    this.barallaService.getBaralla().generar();
+    //console.log(this.baralla.baralla[0].num);
+  }
+  public getBaralla():Baralla {
+    return this.barallaService.getBaralla();
   }
 
 }
