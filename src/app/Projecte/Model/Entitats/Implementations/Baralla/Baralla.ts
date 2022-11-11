@@ -11,14 +11,14 @@ export class Baralla implements IBarallaSetIMig {
         this.generar();
     }
 
-    public barrejar(): void {
-        for (let index = 0; index < this.baralla.length;index++) {
-
-        }
+    barrejar(): void {
+        throw new Error("Method not implemented.");
     }
 
+    
+
     public generar(): void {
-        this.baralla.filter(carta => carta.num==8 || carta.num==9);       
+        this.baralla = this.baralla.filter(carta => carta.num!=8 && carta.num!=9);       
     }
 
 }

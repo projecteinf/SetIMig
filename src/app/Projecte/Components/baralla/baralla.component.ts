@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BarallaSetIMig } from '../../Model/Entitats/Implementations/Baralla/BarallaSetIMig';
+import { Baralla } from '../../Model/Entitats/Implementations/Baralla/Baralla';
 
 
 @Component({
@@ -9,12 +9,13 @@ import { BarallaSetIMig } from '../../Model/Entitats/Implementations/Baralla/Bar
 })
 
 export class BarallaComponent implements OnInit {
-  baralla!:BarallaSetIMig;
+  baralla!:Baralla;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.baralla = new BarallaSetIMig();
+    this.baralla = new Baralla();
+    this.baralla.generar();
     console.log(this.baralla.baralla[0].num);
   }
 
