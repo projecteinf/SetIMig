@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CartaSetIMig } from '../../Model/Entitats/Implementations/Carta/CartaSetIMig';
+import { JugadorService } from '../../Model/Services/jugadors/jugador.service';
 
 @Component({
   selector: 'app-carta',
@@ -8,7 +9,7 @@ import { CartaSetIMig } from '../../Model/Entitats/Implementations/Carta/CartaSe
 })
 export class CartaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private jugadorService:JugadorService) { }
   @Input() carta!: CartaSetIMig;
   
   ngOnInit(): void {
@@ -17,7 +18,7 @@ export class CartaComponent implements OnInit {
 
   agafar(carta:CartaSetIMig) {
     carta.girar();
-    
+    this.jugadorService.getJugador().agafarCarta(carta);
   }
 
 }

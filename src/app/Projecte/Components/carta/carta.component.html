@@ -1,4 +1,4 @@
-<span *ngIf="carta.visible" (click)="agafar(carta)">
+<span *ngIf="carta.visible">
     {{carta.num}}-<img src="../../../../assets/Imatges/{{carta.img}}" />
 </span>
 <span *ngIf="!carta.visible" (click)="agafar(carta)">

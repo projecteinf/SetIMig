@@ -8,9 +8,9 @@ export class Jugador implements IJugador {
     constructor(nom:string) {
         this.nom = nom;
     }
-    
+
     agafarCarta(carta: CartaSetIMig): void {
-        throw new Error("Method not implemented.");
+        this.cartes.push(carta);
     }
     contar(): number {
         throw new Error("Method not implemented.");
