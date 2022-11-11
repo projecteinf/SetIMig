@@ -20,7 +20,7 @@ export class CartaComponent implements OnInit {
   agafar(carta:CartaSetIMig) {
     carta.girar();
     this.jugadorService.getJugador().agafarCarta(carta);
-    
+    this.barallaService.getBaralla().eliminar(carta);
   }
 
 }
