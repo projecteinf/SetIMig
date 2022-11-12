@@ -17,10 +17,19 @@ export class Baralla implements IBarallaSetIMig {
     }
 
     barrejar(): void {
-        throw new Error("Method not implemented.");
+        for (let index = 0; index < this.baralla.length; index++) this.canviar(index);
     }
 
-    
+    private canviar(index:number) {
+        const index2=Math.round(Math.random()*this.baralla.length);
+        this.intercanviar(index,index2);
+    }
+
+    private intercanviar(index:number,index2:number) {
+        const aux=this.baralla[index];
+        this.baralla[index] = this.baralla[index2];
+        this.baralla[index2] = aux;
+    }
 
     public generar(): void {
         this.baralla = this.baralla.filter(carta => carta.num!=8 && carta.num!=9);       

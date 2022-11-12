@@ -16,6 +16,7 @@ export class BarallaComponent implements OnInit {
 
   ngOnInit(): void {
     this.barallaService.getBaralla().generar();
+    this.barallaService.getBaralla().barrejar();
     //console.log(this.baralla.baralla[0].num);
   }
   public getBaralla():Baralla {
