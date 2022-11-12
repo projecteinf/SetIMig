@@ -10,9 +10,4 @@ export class Ordinador extends Jugador implements IOrdinador {
         super(nom);
         this.maxPunts = maxPunts;
     }
-
-    override agafarCarta(carta: CartaSetIMig): void {
-        
-    }
-    
 }
