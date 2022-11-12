@@ -1,2 +1,7 @@
-<h1>Jugador: {{ getJugador().nom }}</h1>
-<h2>Punts: {{ getJugador().contar() }}</h2>
+<h1>Jugador: {{ this.getJugador().nom }}</h1>
+<h2>Punts: {{ this.getJugador().contar() }}</h2>
+<app-cartes-jugador></app-cartes-jugador>
+<button (click)="this.plantar()">Em planto!</button>
+
+<h1>Ordinador: {{ this.jugador?.nom }}</h1>
+<h2>Punts: {{ this.jugador?.contar() }}</h2>
