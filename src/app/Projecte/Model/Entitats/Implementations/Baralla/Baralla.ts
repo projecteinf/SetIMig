@@ -1,4 +1,4 @@
-import { PAL } from "../../../../Utils/pals";
+import { PAL, Utils } from "../../../../Utils/pals";
 import { CartaSetIMig } from "../Carta/CartaSetIMig";
 import { IBarallaSetIMig } from "../../Interfaces/Baralla/IBarallaSetIMig";
 
@@ -21,7 +21,7 @@ export class Baralla implements IBarallaSetIMig {
     }
 
     private canviar(index:number) {
-        const index2=Math.round(Math.random()*this.baralla.length);
+        const index2=Utils.getRandom(this.baralla.length);
         this.intercanviar(index,index2);
     }
 
