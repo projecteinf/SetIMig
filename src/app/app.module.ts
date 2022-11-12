@@ -6,7 +6,7 @@ import { BarallaComponent } from './Projecte/Components/baralla/baralla.componen
 import { CartaComponent } from './Projecte/Components/carta/carta.component';
 import { JugadorComponent } from './Projecte/Components/jugador/jugador.component';
 import { CartesJugadorComponent } from './Projecte/Components/cartes-jugador/cartes-jugador.component';
-import { OrdinadorComponent } from './Projecte/Components/ordinador/ordinador.component';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +15,6 @@ import { OrdinadorComponent } from './Projecte/Components/ordinador/ordinador.co
     CartaComponent,
     JugadorComponent,
     CartesJugadorComponent,
-    OrdinadorComponent
   ],
   imports: [
     BrowserModule
