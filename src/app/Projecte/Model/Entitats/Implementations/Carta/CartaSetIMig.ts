@@ -13,7 +13,7 @@ export class CartaSetIMig extends Carta implements ICartaSetIMig {
 
     private setValue(num: number) {
         if (num < 8)
-            this.value = 1;
+            this.value = num;
         else
             this.value = 0.5;
     }

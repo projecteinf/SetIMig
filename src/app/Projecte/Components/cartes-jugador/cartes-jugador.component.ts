@@ -18,6 +18,8 @@ export class CartesJugadorComponent implements OnInit {
     return this.jugadorService.getJugador().cartes;
   }
     
-
+  contabilitzar():number {
+    return this.jugadorService.getJugador().contar();
+  }
 
 }

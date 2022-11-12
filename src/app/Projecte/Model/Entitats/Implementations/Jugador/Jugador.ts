@@ -12,8 +12,13 @@ export class Jugador implements IJugador {
     agafarCarta(carta: CartaSetIMig): void {
         this.cartes.push(carta);
     }
+    
     contar(): number {
-        throw new Error("Method not implemented.");
+        let total:number = 0;
+        this.cartes.forEach(carta => {
+            total += carta.value;
+        });
+        return total;
     }
 
     

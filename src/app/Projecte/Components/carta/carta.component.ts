@@ -18,9 +18,11 @@ export class CartaComponent implements OnInit {
   }
 
   agafar(carta:CartaSetIMig) {
-    carta.girar();
-    this.jugadorService.getJugador().agafarCarta(carta);
-    this.barallaService.getBaralla().eliminar(carta);
+    if (this.jugadorService.getJugador().contar()<=7.5) {
+      carta.girar();
+      this.jugadorService.getJugador().agafarCarta(carta);
+      this.barallaService.getBaralla().eliminar(carta);
+    }
   }
 
 }
