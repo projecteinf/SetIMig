@@ -1,6 +1,7 @@
-import { PAL, Utils } from "../../../../Utils/pals";
 import { CartaSetIMig } from "../Carta/CartaSetIMig";
 import { IBarallaSetIMig } from "../../Interfaces/Baralla/IBarallaSetIMig";
+import { PAL } from "src/app/Projecte/Utils/pals";
+import { Utils } from "src/app/Projecte/Utils/Utils";
 
 export class Baralla implements IBarallaSetIMig {
     baralla:Array<CartaSetIMig> = new Array<CartaSetIMig>();
