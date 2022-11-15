@@ -1,35 +1,24 @@
 import { CartaSetIMig } from "../Carta/CartaSetIMig";
 import { IBarallaSetIMig } from "../../Interfaces/Baralla/IBarallaSetIMig";
-import { PAL } from "src/app/Projecte/Utils/pals";
-import { Utils } from "src/app/Projecte/Utils/Utils";
+import { BarallaBase } from "./BarallaBase";
 
-export class Baralla implements IBarallaSetIMig {
-    baralla:Array<CartaSetIMig> = new Array<CartaSetIMig>();
+export class Baralla extends BarallaBase implements IBarallaSetIMig {
+    override baralla!:Array<CartaSetIMig>;
 
-    public eliminar(carta: CartaSetIMig):void {
-        this.baralla = this.baralla.filter(c => carta.num!=c.num || c.pal!=carta.pal);   
-    }
-    
+    //override baralla:Array<CartaSetIMig> = new Array<CartaSetIMig>();
+
 
     constructor() {
-        for(let i=1;i<=12;i++) 
-            for(let j=0;j<4;j++) this.baralla.push(new CartaSetIMig(i,PAL[j].pal,PAL[j].imatge));
+        super();
         this.generar();
+        this.inicialitzar();
+        console.log(this.baralla);
     }
 
-    barrejar(): void {
-        for (let index = 0; index < this.baralla.length; index++) this.canviar(index);
-    }
-
-    private canviar(index:number) {
-        const index2=Utils.getRandom(this.baralla.length);
-        this.intercanviar(index,index2);
-    }
-
-    private intercanviar(index:number,index2:number) {
-        const aux=this.baralla[index];
-        this.baralla[index] = this.baralla[index2];
-        this.baralla[index2] = aux;
+    public inicialitzar() {
+        this.baralla.forEach(carta => {
+            carta.value = carta.num < 8 ? carta.num : 0.5;
+        });
     }
 
     public generar(): void {
