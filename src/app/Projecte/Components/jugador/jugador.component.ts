@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Jugador } from '../../Model/Entitats/Implementations/Jugador/Jugador';
 import { Ordinador } from '../../Model/Entitats/Implementations/Jugador/Ordinador';
 import { BarallaService } from '../../Model/Services/baralla/baralla.service';
 import { JugadorService } from '../../Model/Services/jugadors/jugador.service';
@@ -23,5 +24,9 @@ export class JugadorComponent implements OnInit {
     this.jugador = new Ordinador("Ordinador",6);
     this.jugador.jugar(this.barallaService.getBaralla());
 
+  }
+
+  getJugadorOrdinador():Jugador {
+    return this.jugador as Jugador;
   }
 }

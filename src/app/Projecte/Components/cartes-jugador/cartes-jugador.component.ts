@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CartaSetIMig } from '../../Model/Entitats/Implementations/Carta/CartaSetIMig';
+import { Jugador } from '../../Model/Entitats/Implementations/Jugador/Jugador';
 import { JugadorService } from '../../Model/Services/jugadors/jugador.service';
 
 @Component({
@@ -8,14 +9,17 @@ import { JugadorService } from '../../Model/Services/jugadors/jugador.service';
   styleUrls: ['./cartes-jugador.component.css']
 })
 export class CartesJugadorComponent implements OnInit {
+  @Input() jugador!: Jugador;
 
   constructor(private jugadorService:JugadorService) { }
 
   ngOnInit(): void {
   }
 
-  getCartes():Array<CartaSetIMig> {
-    return this.jugadorService.getJugador().cartes;
+  getCartes():Array<CartaSetIMig> | undefined {
+    //return this.jugadorService.getJugador().cartes;
+    if (this.jugador!=undefined) return this.jugador.cartes;
+    else return undefined;
   }
     
   contabilitzar():number {
