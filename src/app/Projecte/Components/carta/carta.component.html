@@ -1,6 +1,8 @@
-<span *ngIf="carta.visible">
-    {{carta.num}}-<img src="../../../../assets/Imatges/{{carta.img}}" />
+<span *ngIf="carta.visible" (click)="agafar(carta)">
+    {{ carta!.num }} - {{ carta!.pal }}
+    <img src=".{{this.ruta}}assets/Imatges/{{carta.img}}" alt="carta" />
 </span>
-<span *ngIf="!carta.visible" (click)="agafar(carta)">
-    <img src="../../../../assets/Imatges/revers.png" />
+
+<span *ngIf="!carta.visible"  (click)="agafar(carta)">
+    <img src=".{{this.ruta}}assets/Imatges/revers.png" alt="carta" />
 </span>
